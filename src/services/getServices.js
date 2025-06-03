@@ -1,10 +1,11 @@
-let playername = "szoboszlai";
-let league = 39;
+// let playername = "szoboszlai";
+// let league = 39;
 
-async function getPlayers() {
-  const url = `https://api-football-v1.p.rapidapi.com/v3/players?league=${league}&search=${playername}`;
+async function getPlayers(playername) {
+  const url = `https://api-football-v1.p.rapidapi.com/v3/players?league=39`;
   try {
-    const response = await fetch(url, {
+    const searchquery = `&search=${playername}`;
+    const response = await fetch(url + searchquery, {
       method: "GET",
       //   body: JSON.stringify(data),
       headers: {
@@ -17,11 +18,11 @@ async function getPlayers() {
     }
 
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     return json;
   } catch (error) {
     console.error(error.message);
   }
 }
 
-getPlayers();
+export { getPlayers };
