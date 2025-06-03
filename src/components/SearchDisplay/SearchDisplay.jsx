@@ -3,10 +3,14 @@ const SearchDisplay = ({ returnResult }) => {
     <>
       {returnResult.map((player) => (
         <div className="pcard">
-          <p>
-            {player.player.firstname} {player.player.lastname}
-          </p>
           <img className="photo" src={player.player.photo} />
+          <ul>
+            <li>
+              {player.player.firstname} {player.player.lastname}
+            </li>
+            <li>{player.statistics[0].team.name}</li>
+            <li>{player.statistics[0].games.position}</li>
+          </ul>
         </div>
       ))}
     </>

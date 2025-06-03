@@ -2,7 +2,7 @@
 // let league = 39;
 
 async function getPlayers(playername) {
-  const url = `https://api-football-v1.p.rapidapi.com/v3/players?league=39`;
+  const url = `https://api-football-v1.p.rapidapi.com/v3/players?season=2024&league=39`;
   try {
     const searchquery = `&search=${playername}`;
     const response = await fetch(url + searchquery, {
