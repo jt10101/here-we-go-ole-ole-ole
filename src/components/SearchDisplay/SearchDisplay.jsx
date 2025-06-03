@@ -1,9 +1,13 @@
-const SearchDisplay = (props) => {
+const SearchDisplay = ({ returnResult }) => {
   return (
     <>
-      {/* <h1>Display Results</h1> */}
-      {props.returnResult.map((player) => (
-        <p>{player.player.name} </p>
+      {returnResult.map((player) => (
+        <div className="pcard">
+          <p>
+            {player.player.firstname} {player.player.lastname}
+          </p>
+          <img className="photo" src={player.player.photo} />
+        </div>
       ))}
     </>
   );
