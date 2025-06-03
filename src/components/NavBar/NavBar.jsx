@@ -1,7 +1,11 @@
 const NavBar = () => {
   return (
     <>
-      <p>Navbar</p>
+      <p> Navigation</p>
+      <ul>
+        <li>Home</li>
+        <li>Search</li>
+      </ul>
     </>
   );
 };

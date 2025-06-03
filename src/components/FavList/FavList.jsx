@@ -1,7 +1,11 @@
 const FavList = () => {
   return (
     <>
-      <p>Fav List</p>
+      <p>Favourites</p>
+      <ul>
+        <li>Halaand</li>
+        <li>Salah</li>
+      </ul>{" "}
     </>
   );
 };
