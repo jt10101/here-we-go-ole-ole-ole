@@ -38,25 +38,20 @@ const App = () => {
   return (
     <>
       <main>
-        <section class="header">
+        <section className="header">
           <img src="" />
-          <BannerNews />
+          <NavBar />
         </section>
-        <section class="body">
-          <section class="nav">
-            <div class="navbar">
-              <NavBar />
+        {/* Body is all elements below the header */}
+        <section className="body">
+          <section className="content">
+            <div className="searchbar">
+              <SearchBar
+                getPlayers={getPlayers}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+              />
             </div>
-            <div class="favourites">
-              <FavList />
-            </div>
-          </section>
-          <section class="content">
-            <SearchBar
-              getPlayers={getPlayers}
-              handleChange={handleChange}
-              handleSubmit={handleSubmit}
-            />
             <div className="searchdisplay">
               <SearchDisplay returnResult={returnResult} />
             </div>

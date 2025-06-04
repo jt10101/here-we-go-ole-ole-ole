@@ -1,11 +1,13 @@
 const NavBar = () => {
   return (
     <>
-      <p> Navigation</p>
-      <ul>
-        <li>Home</li>
-        <li>Search</li>
-      </ul>
+      <div>
+        <ul className="navlist">
+          <li>Home</li>
+          <li>Search</li>
+          <li>Favourites</li>
+        </ul>
+      </div>
     </>
   );
 };
