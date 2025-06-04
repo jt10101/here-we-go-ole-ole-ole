@@ -6,7 +6,7 @@ import { DetailedPage } from "./pages/DetailedPage/DetailedPage";
 // Components
 import { NavBar } from "./components/NavBar/NavBar";
 // Services
-import { getPlayers } from "./services/getServices";
+import { getPlayers, getAirtable } from "./services/getServices";
 // React related libraries
 import { useState } from "react";
 import { Route, Routes } from "react-router";
@@ -41,7 +41,7 @@ const App = () => {
       <main>
         <section className="header">
           <img className="logo" src="https://i.imgur.com/2UEwZLK.png" />
-          <NavBar />
+          <NavBar getAirtable={getAirtable} />
         </section>
         {/* Body comprises of all elements below the header */}
         <section className="body">

@@ -11,6 +11,8 @@ const NavBar = () => {
           <li className="navobject">
             <Link to="/players"> Search</Link>
           </li>
+          {/* https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp */}
+          {/* To implement this */}
           <li className="navobject">Favourites</li>
         </ul>
       </div>
