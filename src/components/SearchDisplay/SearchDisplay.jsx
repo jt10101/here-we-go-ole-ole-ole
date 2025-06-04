@@ -1,6 +1,6 @@
 import { PlayerCard } from "../PlayerCard/PlayerCard";
 
-export const SearchDisplay = ({ returnResult }) => {
+const SearchDisplay = ({ returnResult }) => {
   return (
     <div className="searchdisplay">
       {returnResult.length > 0 ? (
@@ -13,3 +13,5 @@ export const SearchDisplay = ({ returnResult }) => {
     </div>
   );
 };
+
+export { SearchDisplay };

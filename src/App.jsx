@@ -1,8 +1,8 @@
 // src/App.jsx
 
+// Pages
+import { SearchPage } from "./pages/Search/searchPage";
 // Components
-import { SearchBar } from "./components/SearchBar/SearchBar";
-import { SearchDisplay } from "./components/SearchDisplay/SearchDisplay";
 import { NavBar } from "./components/NavBar/NavBar";
 import { BannerNews } from "./components/BannerNews/BannerNews";
 import { FavList } from "./components/FavList/FavList";
@@ -10,6 +10,7 @@ import { FavList } from "./components/FavList/FavList";
 import { getPlayers } from "./services/getServices";
 // React related libraries
 import { useState } from "react";
+import { Route, Routes } from "react-router";
 // CSS file
 import "./App.css";
 
@@ -45,16 +46,19 @@ const App = () => {
         {/* Body is all elements below the header */}
         <section className="body">
           <section className="content">
-            <div className="searchbar">
-              <SearchBar
-                getPlayers={getPlayers}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
+            <Routes>
+              <Route
+                path="/players"
+                element={
+                  <SearchPage
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                    returnResult={returnResult}
+                  />
+                }
               />
-            </div>
-            <div className="searchdisplay">
-              <SearchDisplay returnResult={returnResult} />
-            </div>
+            </Routes>
+            {/* <SearchDisplay returnResult={returnResult} /> */}
           </section>
         </section>
       </main>

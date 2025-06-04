@@ -1,10 +1,12 @@
-const SearchBar = (props) => {
+const SearchBar = ({ handleChange, handleSubmit }) => {
   return (
     <>
-      <input name="search" type="search" onChange={props.handleChange}></input>
-      <button name="searchsubmit" onClick={props.handleSubmit}>
-        Submit
-      </button>
+      <div className="searchbar">
+        <input name="search" type="search" onChange={handleChange}></input>
+        <button name="searchsubmit" onClick={handleSubmit}>
+          Submit
+        </button>
+      </div>
     </>
   );
 };

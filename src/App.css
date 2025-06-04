@@ -19,6 +19,23 @@ main {
   gap: 20px;
 }
 
+/* Link styling doesn't fully work */
+.navobject:link {
+  color: white;
+}
+
+.navobject:visited {
+  color: white;
+}
+
+.navobject:hover {
+  color: goldenrod;
+}
+
+.navobject:active {
+  color: white;
+}
+
 .body {
   display: flex;
   flex-direction: column;
