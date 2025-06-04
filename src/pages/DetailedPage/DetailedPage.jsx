@@ -1,4 +1,4 @@
-const DetailedPage = () => {
+const DetailedPage = ({ selectedPlayerID }) => {
   return (
     <>
       <p>Detailed Page</p>
