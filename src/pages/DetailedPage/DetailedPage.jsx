@@ -4,25 +4,18 @@ import { useState, useEffect } from "react";
 
 const DetailedPage = () => {
   const [detailedData, setdetailedData] = useState([]);
-  const { playerID } = useParams();
+  const { playerID } = Number(useParams());
+
+  // console.log(getIndividualPlayer(playerID));
 
   useEffect(() => {
     const getIndividualData = async () => {
-      // const data = await getIndividualPlayer(playerID);
-      // console.log(data);
-      console.log(playerID);
-
+      const data = await getIndividualPlayer(playerID);
+      console.log(data);
       // setdetailedData(data);
     };
-  }, []);
-  // console.log(playerID);
-  // useEffect(() => {
-  //   const getIndividualData = async (playerID) => {
-  //     let data = await getIndividualPlayer(playerID);
-  //     setdetailedData(data);
-  //     console.log(data);
-  //   };
-  // }, []);
+  }, [playerID]);
+
   return (
     <>
       <p>Detailed Page</p>
