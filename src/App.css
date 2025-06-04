@@ -16,7 +16,7 @@ main {
   display: flex;
   flex-direction: row;
   list-style-type: none;
-  gap: 20px; /* Add space between list items */
+  gap: 20px;
 }
 
 .body {
@@ -49,4 +49,116 @@ main {
 .pcard img {
   max-width: 30%;
   height: auto;
+}
+
+/*CSS Design for Card*/
+.player-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  max-width: 320px;
+  margin: 15px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.player-image-container {
+  width: 100%;
+  padding-top: 75%;
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.player-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 3px solid #3498db;
+}
+
+.no-photo-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+  color: #888;
+  font-size: 1em;
+  text-align: center;
+  border-bottom: 3px solid #ccc;
+}
+
+.player-details {
+  padding: 20px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.player-name {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.player-nationality,
+.player-club,
+.player-position,
+.player-age {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.flag-icon {
+  width: 20px;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 5px;
+  border-radius: 2px;
+}
+
+@media (min-width: 768px) {
+  .player-card {
+    flex-direction: row;
+    max-width: 600px;
+  }
+
+  .player-image-container {
+    width: 40%;
+    padding-top: 0;
+    height: auto;
+    min-height: 180px;
+  }
+
+  .player-details {
+    width: 60%;
+    text-align: left;
+    padding: 20px 25px;
+  }
+
+  .player-name {
+    font-size: 1.8em;
+  }
 }

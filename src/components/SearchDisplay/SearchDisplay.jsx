@@ -1,19 +1,15 @@
-const SearchDisplay = ({ returnResult }) => {
+import { PlayerCard } from "../PlayerCard/PlayerCard";
+
+export const SearchDisplay = ({ returnResult }) => {
   return (
-    <>
-      {returnResult.map((player) => (
-        <div className="pcard">
-          <img className="photo" src={player.player.photo} />
-          <ul>
-            <li>
-              {player.player.firstname} {player.player.lastname}
-            </li>
-            <li>{player.statistics[0].team.name}</li>
-            <li>{player.statistics[0].games.position}</li>
-          </ul>
-        </div>
-      ))}
-    </>
+    <div className="searchdisplay">
+      {returnResult.length > 0 ? (
+        returnResult.map((playerData) => (
+          <PlayerCard key={playerData.player.id} player={playerData} />
+        ))
+      ) : (
+        <p>No results found. Try searching for a player!</p>
+      )}
+    </div>
   );
 };
-export { SearchDisplay };
