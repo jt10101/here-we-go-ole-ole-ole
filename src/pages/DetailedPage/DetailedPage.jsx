@@ -3,22 +3,30 @@ import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 
 const DetailedPage = () => {
-  const [detailedData, setdetailedData] = useState([]);
-  const { playerID } = Number(useParams());
-
-  // console.log(getIndividualPlayer(playerID));
+  const [detailedData, setdetailedData] = useState();
+  const { playerID } = useParams();
 
   useEffect(() => {
+    if (!playerID) {
+      throw new Error("No PlayerID found");
+    }
     const getIndividualData = async () => {
-      const data = await getIndividualPlayer(playerID);
-      console.log(data);
-      // setdetailedData(data);
+      try {
+        const data = await getIndividualPlayer(playerID);
+        const datamod = data.response;
+        console.log(datamod);
+        setdetailedData(datamod);
+      } catch (Error) {
+        console.error("Error fetching data", Error);
+      }
     };
+    getIndividualData();
   }, [playerID]);
 
   return (
     <>
       <p>Detailed Page</p>
+      {/* <p>Name: {detailedData.player.firstname}</p>   */}
     </>
   );
 };

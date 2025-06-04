@@ -40,7 +40,7 @@ const App = () => {
     <>
       <main>
         <section className="header">
-          <img src="placeholder" />
+          <img className="logo" src="https://i.imgur.com/2UEwZLK.png" />
           <NavBar />
         </section>
         {/* Body comprises of all elements below the header */}

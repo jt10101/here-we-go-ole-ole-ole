@@ -7,13 +7,19 @@ main {
 .header {
   display: flex;
   flex-direction: row;
+  align-items: center;
   height: 50px;
   background-color: black;
   color: white;
 }
 
+.logo {
+  height: 80%;
+}
+
 .navlist {
   display: flex;
+  font-size: 20px;
   flex-direction: row;
   list-style-type: none;
   gap: 20px;
