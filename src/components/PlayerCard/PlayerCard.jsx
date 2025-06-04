@@ -11,7 +11,7 @@ export const PlayerCard = ({ player }) => {
   const position = player.statistics[0]?.games?.position;
   const handleSelect = (event) => {
     let selectedPlayerID = event.target.name;
-    navigate(`/player/${selectedPlayerID}`);
+    navigate(`/players/${selectedPlayerID}`);
   };
 
   return (

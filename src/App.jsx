@@ -35,9 +35,6 @@ const App = () => {
     // console.log(refdata[0].player.name);
   };
 
-  // const handleSelect = (event) => {
-  // setSelectedPlayerID(event.target.name);
-
   // JSX
   return (
     <>
