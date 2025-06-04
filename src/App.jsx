@@ -2,10 +2,9 @@
 
 // Pages
 import { SearchPage } from "./pages/Search/searchPage";
+import { DetailedPage } from "./pages/DetailedPage/DetailedPage";
 // Components
 import { NavBar } from "./components/NavBar/NavBar";
-import { BannerNews } from "./components/BannerNews/BannerNews";
-import { FavList } from "./components/FavList/FavList";
 // Services
 import { getPlayers } from "./services/getServices";
 // React related libraries
@@ -17,6 +16,7 @@ import "./App.css";
 const App = () => {
   // States
   const [searchPlayer, setSearchPlayer] = useState();
+  const [selectedPlayer, setSelectedPlayer] = useState([]);
   const [returnResult, setReturnResult] = useState([]);
 
   // JS Functions
@@ -30,9 +30,13 @@ const App = () => {
     let refdata = [];
     refdata = data.response;
     setReturnResult(refdata);
-    // let data = searchdata.response;
     console.log(refdata);
-    console.log(refdata[0].player.name);
+    return data;
+    // console.log(refdata[0].player.name);
+  };
+
+  const handleSelect = async () => {
+    console.log("test");
   };
 
   // JSX
@@ -53,12 +57,16 @@ const App = () => {
                   <SearchPage
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
+                    handleSelect={handleSelect}
                     returnResult={returnResult}
                   />
                 }
               />
+              <Route
+                path="/players/:id"
+                element={<DetailedPage returnResult={returnResult} />}
+              />
             </Routes>
-            {/* <SearchDisplay returnResult={returnResult} /> */}
           </section>
         </section>
       </main>

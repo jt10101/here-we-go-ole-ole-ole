@@ -1,6 +1,3 @@
-// let playername = "szoboszlai";
-// let league = 39;
-
 async function getPlayers(playername) {
   const url = `https://api-football-v1.p.rapidapi.com/v3/players?season=2024&league=39`;
   try {

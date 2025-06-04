@@ -1,4 +1,4 @@
-export const PlayerCard = ({ player }) => {
+export const PlayerCard = ({ player, handleSelect }) => {
   if (!player) {
     return null;
   }
@@ -8,7 +8,7 @@ export const PlayerCard = ({ player }) => {
   const position = player.statistics[0]?.games?.position;
 
   return (
-    <div className="player-card">
+    <div className="player-card" onClick={handleSelect}>
       <div className="player-image-container">
         {photo ? (
           <img
