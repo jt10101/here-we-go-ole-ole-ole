@@ -1,7 +1,7 @@
 // src/App.jsx
 
 // Pages
-import { SearchPage } from "./pages/Search/searchPage";
+import { SearchPage } from "./pages/Search/SearchPage";
 import { DetailedPage } from "./pages/DetailedPage/DetailedPage";
 // Components
 import { NavBar } from "./components/NavBar/NavBar";
