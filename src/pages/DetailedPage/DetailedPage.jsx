@@ -26,7 +26,7 @@ const DetailedPage = () => {
   return (
     <>
       <p>Detailed Page</p>
-      {/* <p>Name: {detailedData.player.firstname}</p>   */}
+      {/* <p>Name: {detailedData[0].player.firstname}</p> */}
     </>
   );
 };
