@@ -74,6 +74,19 @@ main {
   height: auto;
 }
 
+/* Fav/Non Fav buttons */
+.fav {
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+
+.nonfav {
+  display: block;
+  height: 50px;
+  width: 50px;
+}
+
 /*CSS Design for Card*/
 .player-card {
   background-color: #fff;
