@@ -72,18 +72,20 @@ async function getAirtable() {
   }
 }
 
-async function pushAirtable() {
+async function pushAirtable(playerID, playerName) {
   const url = `https://api.airtable.com/v0/app6gjtZQ7OinU39n/Table%201`;
   try {
     // const searchquery = ;
     const response = await fetch(url, {
       method: "POST",
-      body: `{
+      body: JSON.stringify(`{
   "fields": {
-    "playerID": "1000",
-    "Name": "Peterson"
-  }
-}`,
+    "playerID": ${playerID},
+    "name": ${playerName}
+  },
+      "typecast": true
+
+}`),
       headers: {
         Authorization: `Bearer patUZm7ykznd3wHLl.44dec8f80a327850270b7c23d2ca3d3344338c83790eee9ec09edf79c9946554`,
         "Content-Type": "application/json",
@@ -100,6 +102,6 @@ async function pushAirtable() {
     console.error(error.message);
   }
 }
-pushAirtable();
+// pushAirtable();
 
-export { getPlayers, getIndividualPlayer, getAirtable };
+export { getPlayers, getIndividualPlayer, getAirtable, pushAirtable };

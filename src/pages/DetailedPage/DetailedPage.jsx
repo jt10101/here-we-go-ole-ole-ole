@@ -1,4 +1,4 @@
-import { getIndividualPlayer } from "../../services/getServices";
+import { getIndividualPlayer, pushAirtable } from "../../services/getServices";
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 
@@ -27,6 +27,9 @@ const DetailedPage = () => {
 
   const handleFav = () => {
     setIsFav(!isFav);
+    if (!isFav) {
+      pushAirtable(playerID, detailedData[0].player.name);
+    }
   };
 
   return (
