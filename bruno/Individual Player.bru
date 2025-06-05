@@ -1,0 +1,20 @@
+meta {
+  name: Individual Player
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://api-football-v1.p.rapidapi.com/v3/players?id=276&season=2020
+  body: none
+  auth: inherit
+}
+
+params:query {
+  id: 276
+  season: 2020
+}
+
+headers {
+  X-RapidAPI-Key: 5c20702421msh8972a317aee15c4p1e393ajsncda94ceaaf98
+}

@@ -1,0 +1,21 @@
+meta {
+  name: Individual Player by ID
+  type: http
+  seq: 6
+}
+
+get {
+  url: https://api-football-v1.p.rapidapi.com/v3/players?season=2024&league=39&search=szoboszlai
+  body: none
+  auth: inherit
+}
+
+params:query {
+  season: 2024
+  league: 39
+  search: szoboszlai
+}
+
+headers {
+  X-RapidAPI-Key: 5c20702421msh8972a317aee15c4p1e393ajsncda94ceaaf98
+}
