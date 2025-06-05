@@ -72,5 +72,34 @@ async function getAirtable() {
   }
 }
 
-getAirtable();
+async function pushAirtable() {
+  const url = `https://api.airtable.com/v0/app6gjtZQ7OinU39n/Table%201`;
+  try {
+    // const searchquery = ;
+    const response = await fetch(url, {
+      method: "POST",
+      body: `{
+  "fields": {
+    "playerID": "1000",
+    "Name": "Peterson"
+  }
+}`,
+      headers: {
+        Authorization: `Bearer patUZm7ykznd3wHLl.44dec8f80a327850270b7c23d2ca3d3344338c83790eee9ec09edf79c9946554`,
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    console.log(json);
+    return json;
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+pushAirtable();
+
 export { getPlayers, getIndividualPlayer, getAirtable };
