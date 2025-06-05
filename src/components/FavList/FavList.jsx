@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAirtable } from "../../services/getServices";
+import { getAirtable } from "../../services/airtableServices";
 
 const FavList = () => {
   const [favPlayers, setFavPlayers] = useState([]);
@@ -8,7 +8,7 @@ const FavList = () => {
       try {
         const data = await getAirtable();
         const datamod = data.records;
-        console.log(datamod);
+        // console.log(datamod);
         setFavPlayers(datamod);
       } catch (Error) {
         console.error("Error fetching data", Error);

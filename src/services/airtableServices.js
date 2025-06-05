@@ -1,5 +1,6 @@
+const url = `https://api.airtable.com/v0/app6gjtZQ7OinU39n/Table%201`;
+
 async function getAirtable() {
-  const url = `https://api.airtable.com/v0/app6gjtZQ7OinU39n/Table%201`;
   try {
     // const searchquery = ;
     const response = await fetch(url, {
@@ -23,7 +24,6 @@ async function getAirtable() {
 }
 
 async function pushAirtable(playerName, playerID) {
-  const url = `https://api.airtable.com/v0/app6gjtZQ7OinU39n/Table%201`;
   try {
     // const searchquery = ;
     let newplayerName = playerName.toString();
@@ -54,11 +54,10 @@ async function pushAirtable(playerName, playerID) {
   }
 }
 
-async function delAirtable(id) {
-  const url = `https://api.airtable.com/v0/app6gjtZQ7OinU39n/Table%201`;
+async function delAirtable(recordid) {
   try {
-    const searchquery = "records[]=";
-    const response = await fetch(url + searchquery + id, {
+    const searchquery = "?records[]=";
+    const response = await fetch(url + searchquery + recordid, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer patUZm7ykznd3wHLl.44dec8f80a327850270b7c23d2ca3d3344338c83790eee9ec09edf79c9946554`,

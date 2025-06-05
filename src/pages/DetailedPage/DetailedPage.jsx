@@ -9,48 +9,43 @@ import { useState, useEffect } from "react";
 
 const DetailedPage = () => {
   const { playerID } = useParams();
-  const [detailedData, setdetailedData] = useState("");
-  const [isFav, setIsFav] = useState();
-  const [favPlayers, setFavPlayers] = useState([]); // Test to pre-set isFav state when page loads
-  useEffect(() => {
-    const getFavs = async () => {
-      try {
-        const data = await getAirtable();
-        const datamod = data.records.map((player) => player.fields.playerid);
-        // console.log(datamod);
-        setFavPlayers(datamod);
-        if (favPlayers.includes(playerID)) {
-          setIsFav(true);
-        }
-      } catch (Error) {
-        console.error("Error fetching data", Error);
-      }
-    };
-    getFavs();
-  }, [favPlayers, playerID]);
+  const [detailedData, setdetailedData] = useState(null);
+  const [isFav, setIsFav] = useState(false);
+  const [recordID, setrecordID] = useState(null);
 
   useEffect(() => {
     if (!playerID) {
       throw new Error("No PlayerID found");
     }
+
     const getIndividualData = async () => {
       try {
+        // This portion calls the individual player's information when the page loads
         const data = await getIndividualPlayer(playerID);
-        const datamod = data.response;
-        console.log(datamod);
-        setdetailedData(datamod);
+        setdetailedData(data.response[0]);
+
+        // This portion is for dealing with the fav icon
+        const airtableData = await getAirtable();
+        const airtableFilter = airtableData.records.find(
+          (record) => record.fields.playerid === playerID
+        );
+
+        console.log(airtableFilter);
       } catch (Error) {
         console.error("Error fetching data", Error);
       }
     };
     getIndividualData();
   }, [playerID]);
-  const pdata = detailedData[0];
+  const pdata = detailedData;
 
   const handleFav = () => {
     setIsFav(!isFav);
     if (!isFav) {
       pushAirtable(detailedData[0].player.name, detailedData[0].player.id);
+    }
+    if (isFav) {
+      delAirtable(recordID);
     }
   };
 
