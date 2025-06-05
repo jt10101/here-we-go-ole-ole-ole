@@ -3,9 +3,10 @@ import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 
 const DetailedPage = () => {
+  const { playerID } = useParams();
+
   const [detailedData, setdetailedData] = useState("");
   const [isFav, setIsFav] = useState(false);
-  const { playerID } = useParams();
 
   useEffect(() => {
     if (!playerID) {

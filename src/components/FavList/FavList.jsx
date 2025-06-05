@@ -3,9 +3,6 @@ import { getAirtable } from "../../services/getServices";
 
 const FavList = () => {
   const [favPlayers, setFavPlayers] = useState([]);
-  // const data = await getAirtable();
-  // setFavPlayers(data);
-
   useEffect(() => {
     const getFavs = async () => {
       try {
