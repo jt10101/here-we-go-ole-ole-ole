@@ -72,20 +72,21 @@ async function getAirtable() {
   }
 }
 
-async function pushAirtable(playerID, playerName) {
+async function pushAirtable(playerName, playerID) {
   const url = `https://api.airtable.com/v0/app6gjtZQ7OinU39n/Table%201`;
   try {
     // const searchquery = ;
+    let newplayerName = playerName.toString();
+    let newplayerID = playerID.toString();
+    const dataToSend = {
+      fields: {
+        name: newplayerName,
+        playerid: newplayerID,
+      },
+    };
     const response = await fetch(url, {
       method: "POST",
-      body: JSON.stringify(`{
-  "fields": {
-    "playerID": ${playerID},
-    "name": ${playerName}
-  },
-      "typecast": true
-
-}`),
+      body: JSON.stringify(dataToSend),
       headers: {
         Authorization: `Bearer patUZm7ykznd3wHLl.44dec8f80a327850270b7c23d2ca3d3344338c83790eee9ec09edf79c9946554`,
         "Content-Type": "application/json",

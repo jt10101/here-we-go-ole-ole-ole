@@ -28,7 +28,7 @@ const DetailedPage = () => {
   const handleFav = () => {
     setIsFav(!isFav);
     if (!isFav) {
-      pushAirtable(playerID, detailedData[0].player.name);
+      pushAirtable(detailedData[0].player.name, detailedData[0].player.id);
     }
   };
 
