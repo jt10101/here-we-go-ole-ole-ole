@@ -1,12 +1,32 @@
-import { getIndividualPlayer, pushAirtable } from "../../services/getServices";
+import {
+  getIndividualPlayer,
+  pushAirtable,
+  getAirtable,
+} from "../../services/getServices";
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 
 const DetailedPage = () => {
   const { playerID } = useParams();
-
   const [detailedData, setdetailedData] = useState("");
-  const [isFav, setIsFav] = useState(false);
+  const [isFav, setIsFav] = useState();
+  const [favPlayers, setFavPlayers] = useState([]); // Test to pre-set isFav state when page loads
+  useEffect(() => {
+    const getFavs = async () => {
+      try {
+        const data = await getAirtable();
+        const datamod = data.records.map((player) => player.fields.playerid);
+        // console.log(datamod);
+        setFavPlayers(datamod);
+        if (favPlayers.includes(playerID)) {
+          setIsFav(true);
+        }
+      } catch (Error) {
+        console.error("Error fetching data", Error);
+      }
+    };
+    getFavs();
+  }, [favPlayers, playerID]);
 
   useEffect(() => {
     if (!playerID) {

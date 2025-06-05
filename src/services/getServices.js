@@ -65,7 +65,7 @@ async function getAirtable() {
     }
 
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     return json;
   } catch (error) {
     console.error(error.message);
@@ -103,14 +103,5 @@ async function pushAirtable(playerName, playerID) {
     console.error(error.message);
   }
 }
-let x = await getAirtable();
-console.log(x.records[0].fields.name);
-// let y = x.records;
-
-let z = x.records.map((player) => {
-  console.log(player.fields.name);
-});
-
-console.log(z);
 
 export { getPlayers, getIndividualPlayer, getAirtable, pushAirtable };
