@@ -6,7 +6,8 @@ import { DetailedPage } from "./pages/DetailedPage/DetailedPage";
 // Components
 import { NavBar } from "./components/NavBar/NavBar";
 // Services
-import { getPlayers, getAirtable } from "./services/getServices";
+import { getPlayers } from "./services/getServices";
+import { getAirtable } from "./services/airtableServices";
 // React related libraries
 import { useState } from "react";
 import { Route, Routes } from "react-router";

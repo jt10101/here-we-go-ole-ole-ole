@@ -1,8 +1,9 @@
+import { getIndividualPlayer } from "../../services/getServices";
 import {
-  getIndividualPlayer,
   pushAirtable,
   getAirtable,
-} from "../../services/getServices";
+  delAirtable,
+} from "../../services/airtableServices";
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 
