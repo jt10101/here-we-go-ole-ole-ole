@@ -3,6 +3,7 @@
 // Pages
 import { SearchPage } from "./pages/Search/SearchPage";
 import { DetailedPage } from "./pages/DetailedPage/DetailedPage";
+import { Home } from "./pages/Home/Home";
 // Components
 import { NavBar } from "./components/NavBar/NavBar";
 // Services
@@ -48,6 +49,7 @@ const App = () => {
         <section className="body">
           <section className="content">
             <Routes>
+              <Route path="" element={<Home />} />
               <Route
                 path="/players"
                 element={

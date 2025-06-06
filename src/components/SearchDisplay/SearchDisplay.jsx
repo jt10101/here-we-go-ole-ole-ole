@@ -1,5 +1,4 @@
 import { PlayerCard } from "../PlayerCard/PlayerCard";
-import { Link } from "react-router";
 
 const SearchDisplay = ({ returnResult, handleSelect }) => {
   return (
