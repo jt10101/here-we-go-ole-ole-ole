@@ -115,7 +115,7 @@ const DetailedPage = () => {
       <p>Position: {pdata?.statistics[0].games.position} </p>
       <p>Appearances: {pdata?.statistics[0].games.appearences} </p>
 
-      <pre>{JSON.stringify(detailedData, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(detailedData, null, 2)}</pre> */}
     </>
   );
 };

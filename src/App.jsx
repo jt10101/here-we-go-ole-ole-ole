@@ -13,7 +13,6 @@ import { useState } from "react";
 import { Route, Routes } from "react-router";
 // CSS file
 import "./App.css";
-import { FavList } from "./components/FavList/FavList";
 
 const App = () => {
   // States
@@ -61,7 +60,6 @@ const App = () => {
                 }
               />
               <Route path="/players/:playerID" element={<DetailedPage />} />
-              <Route path="/favourites" element={<FavList />} />
             </Routes>
           </section>
         </section>
