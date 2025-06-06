@@ -1,0 +1,51 @@
+.playerDetails {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 80px;
+  box-sizing: border-box;
+}
+
+.playerName {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 70px;
+  width: 100%;
+  font-size: 50px;
+  /* background-color: grey; */
+}
+
+.teamlogo {
+  height: 100px;
+}
+
+.playerContent {
+  display: flex;
+  flex-direction: row;
+  padding: 80px 0px 0px 0px;
+}
+
+.playerPhoto {
+  height: 300px;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  /* width: 100%; */
+}
+
+.contentContainers {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.baseData {
+  background-color: aquamarine;
+  width: 50%;
+}
+
+.positionData {
+  background-color: rosybrown;
+  width: 50%;
+}

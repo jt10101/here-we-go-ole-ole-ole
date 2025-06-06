@@ -47,9 +47,7 @@ const DetailedPage = () => {
     };
     getIndividualData();
   }, [playerID]);
-
   const pdata = detailedData;
-
   const handleFav = async () => {
     // Ensure pdata exists before attempting to push/delete
     if (!pdata || !pdata.player || !pdata.player.name || !pdata.player.id) {
@@ -58,7 +56,6 @@ const DetailedPage = () => {
       );
       return;
     }
-
     if (isFav) {
       // It was a favorite, now unfavorite (delete)
       if (recordID) {
@@ -89,20 +86,16 @@ const DetailedPage = () => {
       }
     }
   };
-
   if (pdata === null) {
     return <div>Loading player details...</div>;
   }
-
   return (
     <>
       <FavIcon isFav={isFav} handleFav={handleFav} />
       <PlayerDetails pdata={pdata} />
-      {/* <pre>{JSON.stringify(detailedData, null, 2)}</pre> */}
+      <pre>{JSON.stringify(detailedData, null, 2)}</pre>
     </>
   );
 };
 
 export { DetailedPage };
-
-// For detailed player page, sort data based on the player's position (e.g Striker, Defender, Goalkeeper)
