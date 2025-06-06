@@ -1,11 +1,15 @@
+// API Serivces
 import { getIndividualPlayer } from "../../services/getServices";
 import {
   pushAirtable,
   getAirtable,
   delAirtable,
 } from "../../services/airtableServices";
+// React Libraries
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
+// Componenets
+import { FavIcon } from "../../components/FavIcon/FavIcon";
 
 const DetailedPage = () => {
   const { playerID } = useParams();
@@ -91,19 +95,7 @@ const DetailedPage = () => {
 
   return (
     <>
-      {isFav ? (
-        <img
-          className="fav"
-          src="https://i.imgur.com/YjHli2l.png"
-          onClick={handleFav}
-        />
-      ) : (
-        <img
-          className="nonfav"
-          src="https://i.imgur.com/gkZyBKv.png"
-          onClick={handleFav}
-        />
-      )}
+      <FavIcon isFav={isFav} handleFav={handleFav} />
       <p>Name: {pdata?.player?.name}</p>
       <img src={pdata?.player?.photo} />
       <p>Age: {pdata?.player?.age}</p>
@@ -114,7 +106,6 @@ const DetailedPage = () => {
       <img src={pdata?.statistics[0].team.logo} />
       <p>Position: {pdata?.statistics[0].games.position} </p>
       <p>Appearances: {pdata?.statistics[0].games.appearences} </p>
-
       {/* <pre>{JSON.stringify(detailedData, null, 2)}</pre> */}
     </>
   );
