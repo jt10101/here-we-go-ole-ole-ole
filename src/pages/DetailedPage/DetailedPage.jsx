@@ -10,6 +10,7 @@ import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 // Componenets
 import { FavIcon } from "../../components/FavIcon/FavIcon";
+import { PlayerDetails } from "../../components/PlayerDetails/PlayerDetails";
 
 const DetailedPage = () => {
   const { playerID } = useParams();
@@ -96,16 +97,7 @@ const DetailedPage = () => {
   return (
     <>
       <FavIcon isFav={isFav} handleFav={handleFav} />
-      <p>Name: {pdata?.player?.name}</p>
-      <img src={pdata?.player?.photo} />
-      <p>Age: {pdata?.player?.age}</p>
-      <p>Nationality: {pdata?.player?.nationality}</p>
-      <p>Height: {pdata?.player?.height}</p>
-      <p>Weight: {pdata?.player?.weight} </p>
-      <p>Team: {pdata?.statistics[0].team.name} </p>
-      <img src={pdata?.statistics[0].team.logo} />
-      <p>Position: {pdata?.statistics[0].games.position} </p>
-      <p>Appearances: {pdata?.statistics[0].games.appearences} </p>
+      <PlayerDetails pdata={pdata} />
       {/* <pre>{JSON.stringify(detailedData, null, 2)}</pre> */}
     </>
   );
