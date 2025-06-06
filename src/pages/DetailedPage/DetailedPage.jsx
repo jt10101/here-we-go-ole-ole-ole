@@ -11,7 +11,7 @@ const DetailedPage = () => {
   const { playerID } = useParams();
   const [detailedData, setdetailedData] = useState(null);
   const [isFav, setIsFav] = useState(false);
-  const [recordID, setrecordID] = useState(null);
+  const [recordID, setRecordID] = useState(null);
 
   useEffect(() => {
     if (!playerID) {
@@ -29,29 +29,68 @@ const DetailedPage = () => {
         const airtableFilter = airtableData.records.find(
           (record) => record.fields.playerid === playerID
         );
-
-        console.log(airtableFilter);
+        if (airtableFilter) {
+          setIsFav(true);
+          setRecordID(airtableFilter.id);
+        } else {
+          setIsFav(false);
+          setRecordID(null);
+        }
       } catch (Error) {
         console.error("Error fetching data", Error);
       }
     };
     getIndividualData();
   }, [playerID]);
+
   const pdata = detailedData;
 
-  const handleFav = () => {
-    setIsFav(!isFav);
-    if (!isFav) {
-      pushAirtable(detailedData[0].player.name, detailedData[0].player.id);
+  const handleFav = async () => {
+    // Ensure pdata exists before attempting to push/delete
+    if (!pdata || !pdata.player || !pdata.player.name || !pdata.player.id) {
+      console.warn(
+        "Player data not fully loaded. Cannot process favorite action."
+      );
+      return;
     }
+
     if (isFav) {
-      delAirtable(recordID);
+      // It was a favorite, now unfavorite (delete)
+      if (recordID) {
+        try {
+          await delAirtable(recordID);
+          setIsFav(false);
+          setRecordID(null); // Clear record ID after deletion
+        } catch (error) {
+          console.error("Error deleting favorite:", error);
+        }
+      } else {
+        console.warn("Attempted to unfavorite but no recordID found.");
+      }
+    } else {
+      try {
+        const newRecord = await pushAirtable(
+          pdata.player.name,
+          pdata.player.id
+        );
+        if (newRecord && newRecord.id) {
+          setIsFav(true);
+          setRecordID(newRecord.id);
+        } else {
+          console.error("Failed to add player to favorites: No ID returned.");
+        }
+      } catch (error) {
+        console.error("Error pushing favorite:", error);
+      }
     }
   };
 
+  if (pdata === null) {
+    return <div>Loading player details...</div>;
+  }
+
   return (
     <>
-      {/* <p>Name: {JSON.stringify(detailedData[0]?.player?.name)}</p> */}
       {isFav ? (
         <img
           className="fav"
