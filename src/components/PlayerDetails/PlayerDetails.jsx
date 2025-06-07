@@ -27,6 +27,7 @@ const PlayerDetails = ({ pdata }) => {
                 <li>Age: {pdata?.player?.age}</li>
                 <li>Height: {pdata?.player?.height}</li>
                 <li>Weight: {pdata?.player?.weight}</li>
+                <li>Appearances: {pdata?.statistics[0].games.appearences}</li>
               </ul>
             </div>
             <div className={styles.positionData}>
@@ -34,13 +35,6 @@ const PlayerDetails = ({ pdata }) => {
             </div>
           </div>
         </div>
-        {/* <p></p> */}
-        {/* <p></p> */}
-
-        {/* <p></p>
-        {/* <p>Team: {pdata?.statistics[0].team.name} </p> */}
-        {/* <p>Position: {pdata?.statistics[0].games.position} </p> */}
-        {/* <p>Appearances: {pdata?.statistics[0].games.appearences} </p> */}
       </section>
     </>
   );

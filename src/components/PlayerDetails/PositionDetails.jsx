@@ -5,24 +5,30 @@ const PositionDetails = ({ styles, pdata }) => {
     case "Defender":
       details = (
         <>
-          <p>I am a defender</p>
-          <p>Test</p>
+          <li>I am a defender</li>
+          <li>Tackles: {pdata?.statistics[0].tackles.total}</li>
+          <li>Blocks: {pdata?.statistics[0].tackles.blocks}</li>
+          <li>Interceptions: {pdata?.statistics[0].tackles.interceptions}</li>
         </>
       );
       break;
     case "Attacker":
       details = (
         <>
-          <p>I am an attacker</p>
-          <p>Test</p>
+          <li>I am a attacker</li>
+          <li>Shots Total: {pdata?.statistics[0].shots.total}</li>
+          <li>Shots On: {pdata?.statistics[0].shots.on}</li>
+          <li>Goals: {pdata?.statistics[0].goals.total}</li>
+          <li>Assists: {pdata?.statistics[0].goals.assists}</li>
         </>
       );
       break;
     case "Goalkeeper":
       details = (
         <>
-          <p>I am a goalkeeper</p>
-          <p>Test</p>
+          <li>I am a goalkeeper</li>
+          <li>Saves: {pdata?.statistics[0].goals.saves}</li>
+          <li>Conceded: {pdata?.statistics[0].goals.conceded}</li>
         </>
       );
       break;
@@ -31,7 +37,6 @@ const PositionDetails = ({ styles, pdata }) => {
     <>
       <ul>
         <b>Position Details</b>
-        <li>{position}</li>
         {details}
       </ul>
     </>
