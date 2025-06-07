@@ -30,7 +30,7 @@ const PlayerDetails = ({ pdata }) => {
               </ul>
             </div>
             <div className={styles.positionData}>
-              <PositionDetails />
+              <PositionDetails styles={styles} pdata={pdata} />
             </div>
           </div>
         </div>
