@@ -1,4 +1,14 @@
 .fixturesTable {
   display: flex;
+  flex-direction: column;
   padding: 20px 0px 0px 0px;
+}
+
+.fixtureContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.teamlogo {
+  height: 100px;
 }
