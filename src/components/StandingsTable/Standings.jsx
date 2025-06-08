@@ -45,12 +45,15 @@ const Standings = () => {
         standingData.map((team) => (
           <div className={styles.singleRow} key={team.team.id}>
             <div className={styles.nameLogo}>
-              {team.rank}•
-              <img
-                className={styles.logo}
-                src={team.team.logo}
-                alt={team.team.name}
-              />
+              <div className={styles.rank}>{team.rank}</div>
+              <div>•</div>
+              <div>
+                <img
+                  className={styles.logo}
+                  src={team.team.logo}
+                  alt={team.team.name}
+                />
+              </div>
               {team.team.name}
             </div>
             <div className={styles.teamStats}>
