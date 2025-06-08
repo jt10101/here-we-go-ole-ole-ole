@@ -47,7 +47,7 @@ async function getIndividualPlayer(playerID) {
 }
 
 async function getFixtures() {
-  const url = `https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&season=2024&last=2`;
+  const url = `https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&season=2024&last=4`;
   try {
     // const searchquery = `&id=${playerID}`;
     const response = await fetch(url, {

@@ -32,13 +32,26 @@ const Fixtures = () => {
         {fixturesData && fixturesData.length > 0 ? (
           fixturesData.map((game) => (
             <div className={styles.fixtureContainer}>
+              {/* Home Team Details */}
               <div className={styles.teamFixtureDetails}>
-                <p>{game.teams.home.name}</p>
+                <p>
+                  <strong>{game.teams.home.name}</strong>
+                </p>
                 <img className={styles.teamlogo} src={game.teams.home.logo} />
               </div>
-              <div className={styles.fixtureGeneralDetails}>Game Details</div>
+
+              {/* General Match Details */}
+              <div className={styles.fixtureGeneralDetails}>
+                <div>{game.score.fulltime.home} </div>
+                <div>:</div>
+                <div>{game.score.fulltime.away}</div>
+              </div>
+
+              {/* Away Team Details */}
               <div className={styles.teamFixtureDetails}>
-                <p>{game.teams.away.name}</p>
+                <p>
+                  <strong>{game.teams.away.name}</strong>
+                </p>
                 <img className={styles.teamlogo} src={game.teams.away.logo} />
               </div>
             </div>
@@ -48,7 +61,7 @@ const Fixtures = () => {
         ) : (
           <p>No fixtures data available.</p>
         )}
-        <pre>{JSON.stringify(fixturesData, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(fixturesData, null, 2)}</pre> */}
       </div>
     </div>
   );
