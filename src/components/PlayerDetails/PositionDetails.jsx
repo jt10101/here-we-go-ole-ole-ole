@@ -15,7 +15,7 @@ const PositionDetails = ({ styles, pdata }) => {
     case "Attacker":
       details = (
         <>
-          <li>I am a attacker</li>
+          <li>I am an attacker</li>
           <li>Shots Total: {pdata?.statistics[0].shots.total}</li>
           <li>Shots On: {pdata?.statistics[0].shots.on}</li>
           <li>Goals: {pdata?.statistics[0].goals.total}</li>

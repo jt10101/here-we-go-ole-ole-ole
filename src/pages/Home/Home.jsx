@@ -1,5 +1,11 @@
+import { Standings } from "../../components/StandingsTable/Standings";
+
 const Home = () => {
-  return <></>;
+  return (
+    <>
+      <Standings />
+    </>
+  );
 };
 
 export { Home };

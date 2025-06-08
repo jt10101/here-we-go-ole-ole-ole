@@ -7,10 +7,10 @@ const NavBar = () => {
         <Link to="">Home</Link>
         <Link to="/players"> Search</Link>
         <div className="dropdown">
-          <button class="dropbtn">
-            Favourites<i class="fa fa-caret-down"></i>
+          <button className="dropbtn">
+            Favourites<i className="fa fa-caret-down"></i>
           </button>
-          <div class="dropdown-content">
+          <div className="dropdown-content">
             <FavList />
           </div>
         </div>
