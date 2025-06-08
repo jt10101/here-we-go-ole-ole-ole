@@ -1,0 +1,24 @@
+.singleRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 25px;
+  width: 300px;
+  background-color: gainsboro;
+}
+
+.nameLogo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 20px;
+}
+
+.teamStats {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+}
