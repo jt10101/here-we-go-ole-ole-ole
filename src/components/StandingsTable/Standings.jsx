@@ -33,7 +33,14 @@ const Standings = () => {
   return (
     <>
       <p>Standings</p>
-      <div className={styles.tableHeader}>Header</div>
+      <div className={styles.tableHeader}>
+        <div className={styles.header}>Header</div>
+        <div className={styles.headerDetails}>
+          <div>PL</div>
+          <div>GD</div>
+          <div>PT</div>
+        </div>
+      </div>
       {standingData && standingData.length > 0 ? (
         standingData.map((team) => (
           <div className={styles.singleRow} key={team.team.id}>
