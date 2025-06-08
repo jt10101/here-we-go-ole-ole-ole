@@ -1,9 +1,12 @@
 import styles from "./Fixtures.module.css";
 import { useState, useEffect } from "react";
 import { getFixtures } from "../../services/getServices";
+import moment from "moment";
 
 const Fixtures = () => {
   const [fixturesData, setFixturesData] = useState(null);
+  moment().format();
+
   useEffect(() => {
     const getFixturesData = async () => {
       try {
@@ -42,9 +45,17 @@ const Fixtures = () => {
 
               {/* General Match Details */}
               <div className={styles.fixtureGeneralDetails}>
-                <div>{game.score.fulltime.home} </div>
-                <div>:</div>
-                <div>{game.score.fulltime.away}</div>
+                <div className={styles.fixturetime}>
+                  {/* {game.fixture.timestamp}
+                  {game.fixture.timestamp.map((time) => (
+                    <Moment unix>{time}</Moment>
+                  ))} */}
+                </div>
+                <div className={styles.score}>
+                  <div>{game.score.fulltime.home} </div>
+                  <div>:</div>
+                  <div>{game.score.fulltime.away}</div>
+                </div>
               </div>
 
               {/* Away Team Details */}

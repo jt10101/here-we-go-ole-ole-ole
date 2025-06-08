@@ -1,14 +1,17 @@
 .fixturesTable {
   display: flex;
   flex-direction: column;
-  padding: 20px 0px 0px 0px;
-  width: 100%;
+  padding: 20px 50px 0px 50px;
+  width: 80%;
 }
 
 .fixtureContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  /* width: 80%; */
+  padding: 20px 0px 20px 0px;
+  border-top: 1px solid grey;
 }
 
 .teamFixtureDetails {
@@ -26,6 +29,14 @@
 
 .fixtureGeneralDetails {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.score {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 10px;
 }
