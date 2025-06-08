@@ -1,3 +1,8 @@
+.standingsTable {
+  padding: 20px 0px 0px 20px;
+  width: 400px;
+}
+
 .tableHeader {
   display: flex;
   flex-direction: row;

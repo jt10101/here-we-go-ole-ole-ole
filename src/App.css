@@ -17,33 +17,10 @@ main {
   height: 80%;
 }
 
-/* Navbar */
-
-.navlist {
+.home-container {
   display: flex;
-  font-size: 20px;
   flex-direction: row;
-  list-style-type: none;
-  gap: 20px;
 }
-
-.navobject:link {
-  color: white;
-}
-
-.navobject:visited {
-  color: white;
-}
-
-.navobject:hover {
-  color: goldenrod;
-}
-
-.navobject:active {
-  color: white;
-}
-
-/* Trial */
 
 /* Navbar container */
 .navbar {

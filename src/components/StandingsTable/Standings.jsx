@@ -32,42 +32,45 @@ const Standings = () => {
   }, []);
   return (
     <>
-      <p>Standings</p>
-      <div className={styles.tableHeader}>
-        <div className={styles.header}>Header</div>
-        <div className={styles.headerDetails}>
-          <div>PL</div>
-          <div>GD</div>
-          <div>PT</div>
-        </div>
-      </div>
-      {standingData && standingData.length > 0 ? (
-        standingData.map((team) => (
-          <div className={styles.singleRow} key={team.team.id}>
-            <div className={styles.nameLogo}>
-              <div className={styles.rank}>{team.rank}</div>
-              <div>•</div>
-              <div>
-                <img
-                  className={styles.logo}
-                  src={team.team.logo}
-                  alt={team.team.name}
-                />
-              </div>
-              {team.team.name}
-            </div>
-            <div className={styles.teamStats}>
-              <div>{team.all.played}</div>
-              <div>{team.goalsDiff}</div>
-              <div>{team.points}</div>
-            </div>
+      <div className={styles.standingsTable}>
+        <div className={styles.tableHeader}>
+          <div className={styles.header}>
+            <strong>Premier League 24/25</strong>
           </div>
-        ))
-      ) : standingData === null ? (
-        <p>Loading standings...</p>
-      ) : (
-        <p>No standings data available.</p>
-      )}
+          <div className={styles.headerDetails}>
+            <div>PL</div>
+            <div>GD</div>
+            <div>PT</div>
+          </div>
+        </div>
+        {standingData && standingData.length > 0 ? (
+          standingData.map((team) => (
+            <div className={styles.singleRow} key={team.team.id}>
+              <div className={styles.nameLogo}>
+                <div className={styles.rank}>{team.rank}</div>
+                <div>•</div>
+                <div>
+                  <img
+                    className={styles.logo}
+                    src={team.team.logo}
+                    alt={team.team.name}
+                  />
+                </div>
+                {team.team.name}
+              </div>
+              <div className={styles.teamStats}>
+                <div>{team.all.played}</div>
+                <div>{team.goalsDiff}</div>
+                <div>{team.points}</div>
+              </div>
+            </div>
+          ))
+        ) : standingData === null ? (
+          <p>Loading standings...</p>
+        ) : (
+          <p>No standings data available.</p>
+        )}
+      </div>
       {/* <pre>{JSON.stringify(standingData, null, 2)}</pre> */}
     </>
   );

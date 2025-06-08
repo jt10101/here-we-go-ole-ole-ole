@@ -1,9 +1,13 @@
 import { Standings } from "../../components/StandingsTable/Standings";
+import { Fixtures } from "../../components/Fixtures/Fixtures";
 
 const Home = () => {
   return (
     <>
-      <Standings />
+      <div className="home-container">
+        <Standings />
+        <Fixtures />
+      </div>
     </>
   );
 };
