@@ -4,14 +4,28 @@ import { getStanding } from "../../services/getServices";
 
 const Standings = () => {
   const [standingData, setStandingData] = useState(null);
+
   useEffect(() => {
     const getStandingData = async () => {
       try {
         let data = await getStanding();
         setStandingData(data);
-        console.log(data);
-      } catch (Error) {
-        console.error("Error fetching data", Error);
+        if (
+          data &&
+          data.response &&
+          data.response[0] &&
+          data.response[0].league &&
+          data.response[0].league.standings &&
+          Array.isArray(data.response[0].league.standings[0])
+        ) {
+          setStandingData(data.response[0].league.standings[0]);
+        } else {
+          console.error("error:", data);
+          setStandingData([]);
+        }
+      } catch (error) {
+        console.error("error:", error);
+        setStandingData([]);
       }
     };
     getStandingData();
@@ -20,26 +34,31 @@ const Standings = () => {
     <>
       <p>Standings</p>
       <div className={styles.tableHeader}>Header</div>
-      <div className={styles.singleRow}>
-        <div className={styles.nameLogo}>
-          1 -
-          <img
-            className={styles.logo}
-            src="https://media.api-sports.io/football/teams/41.png"
-          />
-          Liverpool
-        </div>
-        <div className={styles.teamStats}>
-          <div>
-            {standingData?.response[0].league.standings[0][0].all.played}
+      {standingData && standingData.length > 0 ? (
+        standingData.map((team) => (
+          <div className={styles.singleRow} key={team.team.id}>
+            <div className={styles.nameLogo}>
+              {team.rank}•
+              <img
+                className={styles.logo}
+                src={team.team.logo}
+                alt={team.team.name}
+              />
+              {team.team.name}
+            </div>
+            <div className={styles.teamStats}>
+              <div>{team.all.played}</div>
+              <div>{team.goalsDiff}</div>
+              <div>{team.points}</div>
+            </div>
           </div>
-          <div>
-            {standingData?.response[0].league.standings[0][0].goalsDiff}
-          </div>
-          <div>{standingData?.response[0].league.standings[0][0].points}</div>
-        </div>
-      </div>
-      <pre>{JSON.stringify(standingData, null, 2)}</pre>
+        ))
+      ) : standingData === null ? (
+        <p>Loading standings...</p>
+      ) : (
+        <p>No standings data available.</p>
+      )}
+      {/* <pre>{JSON.stringify(standingData, null, 2)}</pre> */}
     </>
   );
 };
