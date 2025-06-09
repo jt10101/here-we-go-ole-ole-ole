@@ -1,0 +1,8 @@
+.clubbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.clubLogo {
+  height: 50px;
+}
