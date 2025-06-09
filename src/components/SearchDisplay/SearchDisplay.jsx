@@ -4,8 +4,8 @@ import styles from "./SearchDisplay.module.css";
 const SearchDisplay = ({ returnResult, handleSelect }) => {
   return (
     <div className={styles.searchdisplay}>
-      {returnResult.length > 0 ? (
-        returnResult.map((playerData) => (
+      {returnResult?.length > 0 ? (
+        returnResult?.map((playerData) => (
           <PlayerCard
             key={playerData.player.id}
             player={playerData}

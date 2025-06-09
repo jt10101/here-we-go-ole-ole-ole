@@ -25,13 +25,6 @@ const ClubBar = ({ handleClickTeam }) => {
     ["https://i.imgur.com/UwwsQRD.png", 39], // Wolverhampton Wanderers
   ];
 
-  //   const handleClickTeam = async (event) => {
-  //     console.log(event.target.name);
-  //     let teamId = event.target.name;
-  //     let data = await getPlayerByTeam(teamId);
-  //     let refdata = data.response;
-  //     // console.log(refdata);
-  //   };
   return (
     <>
       <div className={styles.clubbar}>

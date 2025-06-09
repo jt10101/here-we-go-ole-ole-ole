@@ -38,12 +38,10 @@ const App = () => {
   };
 
   const handleClickTeam = async (event) => {
-    console.log(event.target.name);
     let teamId = event.target.name;
     let data = await getPlayerByTeam(teamId);
-    let refdata = data.response;
-    setReturnResult(refdata);
-    // console.log(refdata);
+    setReturnResult(data);
+    console.log(data);
   };
 
   // JSX
