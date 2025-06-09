@@ -11,10 +11,10 @@ const Standings = () => {
         let data = await getStanding();
         setStandingData(data);
         if (
-          data &&
-          data.response &&
-          data.response[0] &&
-          data.response[0].league &&
+          // data &&
+          // data.response &&
+          // data.response[0] &&
+          // data.response[0].league &&
           data.response[0].league.standings &&
           Array.isArray(data.response[0].league.standings[0])
         ) {

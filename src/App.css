@@ -3,13 +3,15 @@ main {
   flex-direction: column;
   min-height: 100vh;
   font-family: "Nunito Sans", sans-serif;
+  /* background-image: url("https://i.imgur.com/YRR41h6.jpeg"); */
+  /* background-size: auto; */
 }
 
 .header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 50px;
+  height: 60px;
   background-color: black;
   color: white;
 }
@@ -31,7 +33,7 @@ main {
 /* Links inside the navbar */
 .navbar a {
   float: left;
-  font-size: 15px;
+  font-size: 18px;
   color: white;
   text-align: center;
   padding: 14px 16px;
@@ -46,7 +48,7 @@ main {
 
 /* Dropdown button */
 .dropdown .dropbtn {
-  font-size: 16px;
+  font-size: 18px;
   border: none;
   /* outline: none; */
   color: white;
