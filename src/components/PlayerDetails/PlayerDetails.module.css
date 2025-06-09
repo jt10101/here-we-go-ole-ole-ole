@@ -24,7 +24,7 @@
 .playerContent {
   display: flex;
   flex-direction: row;
-  padding: 80px 0px 0px 0px;
+  padding: 60px 0px 0px 0px;
 }
 
 .playerPhoto {
@@ -36,9 +36,43 @@
 
 .contentContainers {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   font-size: 20px;
+}
+
+.playerHighlights {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 10px 10px 30px 10px;
+}
+
+.boxHighlight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  height: 100px;
+  width: 100%;
+  border-radius: 15px;
+  padding: 10px 10px 5px 10px;
+}
+
+.boxCategory {
+  font-size: 16px;
+}
+
+.boxData {
+  font-size: 50px;
+  font-weight: bold;
+  padding: 0px 0px 0px 25px;
+}
+
+.allData {
+  display: flex;
+  flex-direction: row;
 }
 
 .baseData {

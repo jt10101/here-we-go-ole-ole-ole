@@ -1,18 +1,18 @@
 meta {
-  name: Team
+  name: Player by Team
   type: http
-  seq: 9
+  seq: 11
 }
 
 get {
-  url: https://api-football-v1.p.rapidapi.com/v3/standings?league=39&season=2024
+  url: https://api-football-v1.p.rapidapi.com/v3/players?season=2024&team=45
   body: none
   auth: inherit
 }
 
 params:query {
-  league: 39
   season: 2024
+  team: 45
 }
 
 headers {

@@ -20,18 +20,41 @@ const PlayerDetails = ({ pdata }) => {
             <img className={styles.playerPhoto} src={pdata?.player?.photo} />
           </div>
           <div className={styles.contentContainers}>
-            <div className={styles.baseData}>
-              <ul>
-                <b>Base Details</b>
-                <li>Nationality: {pdata?.player?.nationality}</li>
-                <li>Age: {pdata?.player?.age}</li>
-                <li>Height: {pdata?.player?.height}</li>
-                <li>Weight: {pdata?.player?.weight}</li>
-                <li>Appearances: {pdata?.statistics[0].games.appearences}</li>
-              </ul>
+            <div className={styles.playerHighlights}>
+              <div className={styles.boxHighlight}>
+                <div className={styles.boxCategory}>Appearances</div>
+                <div className={styles.boxData}>
+                  {pdata?.statistics[0].games.appearences}
+                </div>
+              </div>
+              <div className={styles.boxHighlight}>
+                <div className={styles.boxCategory}>Goals</div>
+                <div className={styles.boxData}>
+                  {pdata?.statistics[0].goals.total}
+                </div>
+              </div>
+              <div className={styles.boxHighlight}>
+                <div className={styles.boxCategory}>Wins</div>
+                <div className={styles.boxData}>70</div>
+              </div>
+              <div className={styles.boxHighlight}>
+                <div className={styles.boxCategory}>Losses</div>
+                <div className={styles.boxData}>20</div>
+              </div>
             </div>
-            <div className={styles.positionData}>
-              <PositionDetails styles={styles} pdata={pdata} />
+            <div className={styles.allData}>
+              <div className={styles.baseData}>
+                <ul>
+                  <b>Base Details</b>
+                  <li>Nationality: {pdata?.player?.nationality}</li>
+                  <li>Age: {pdata?.player?.age}</li>
+                  <li>Height: {pdata?.player?.height}</li>
+                  <li>Weight: {pdata?.player?.weight}</li>
+                </ul>
+              </div>
+              <div className={styles.positionData}>
+                <PositionDetails styles={styles} pdata={pdata} />
+              </div>
             </div>
           </div>
         </div>
