@@ -46,6 +46,30 @@ async function getIndividualPlayer(playerID) {
   }
 }
 
+async function getPlayerByTeam(teamId) {
+  const url = `https://api-football-v1.p.rapidapi.com/v3/players?season=2024`;
+  try {
+    const searchquery = `&team=${teamId}`;
+    const response = await fetch(url + searchquery, {
+      method: "GET",
+      //   body: JSON.stringify(data),
+      headers: {
+        "X-RapidAPI-Key": `5c20702421msh8972a317aee15c4p1e393ajsncda94ceaaf98`,
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    // console.log(json);
+    return json;
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
 async function getFixtures() {
   const url = `https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&season=2024&last=4`;
   try {
@@ -94,4 +118,10 @@ async function getStanding() {
   }
 }
 
-export { getPlayers, getIndividualPlayer, getFixtures, getStanding };
+export {
+  getPlayers,
+  getIndividualPlayer,
+  getFixtures,
+  getStanding,
+  getPlayerByTeam,
+};
