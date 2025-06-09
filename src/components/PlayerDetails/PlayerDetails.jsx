@@ -43,6 +43,9 @@ const PlayerDetails = ({ pdata }) => {
               </div>
             </div>
             <div className={styles.allData}>
+              <div className={styles.positionData}>
+                <PositionDetails styles={styles} pdata={pdata} />
+              </div>
               <div className={styles.baseData}>
                 <ul>
                   <b>Base Details</b>
@@ -51,9 +54,6 @@ const PlayerDetails = ({ pdata }) => {
                   <li>Height: {pdata?.player?.height}</li>
                   <li>Weight: {pdata?.player?.weight}</li>
                 </ul>
-              </div>
-              <div className={styles.positionData}>
-                <PositionDetails styles={styles} pdata={pdata} />
               </div>
             </div>
           </div>

@@ -3,31 +3,24 @@ import { Midfielder } from "./Midfielder";
 import { Attacker } from "./Attacker";
 import { Goalkeeper } from "./Goalkeeper";
 
-const PositionDetails = ({ pdata }) => {
+const PositionDetails = ({ pdata, styles }) => {
   let position = pdata?.statistics[0].games.position;
   let details = "";
   switch (position) {
     case "Defender":
-      details = <Defender pdata={pdata} />;
+      details = <Defender pdata={pdata} styles={styles} />;
       break;
     case "Midfielder":
-      details = <Midfielder pdata={pdata} />;
+      details = <Midfielder pdata={pdata} styles={styles} />;
       break;
     case "Attacker":
-      details = <Attacker pdata={pdata} />;
+      details = <Attacker pdata={pdata} styles={styles} />;
       break;
     case "Goalkeeper":
-      details = <Goalkeeper pdata={pdata} />;
+      details = <Goalkeeper pdata={pdata} styles={styles} />;
       break;
   }
-  return (
-    <>
-      <ul>
-        <b>Position Details</b>
-        {details}
-      </ul>
-    </>
-  );
+  return <>{details}</>;
 };
 
 export { PositionDetails };
