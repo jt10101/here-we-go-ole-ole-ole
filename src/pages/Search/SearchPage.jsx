@@ -6,10 +6,11 @@ const SearchPage = ({
   handleSubmit,
   handleSelect,
   returnResult,
+  handleClickTeam,
 }) => {
   return (
     <div>
-      <ClubBar />
+      <ClubBar handleClickTeam={handleClickTeam} />
       <SearchBar handleChange={handleChange} handleSubmit={handleSubmit} />
       <SearchDisplay returnResult={returnResult} handleSelect={handleSelect} />
     </div>

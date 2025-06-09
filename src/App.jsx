@@ -7,7 +7,7 @@ import { Home } from "./pages/Home/Home";
 // Components
 import { NavBar } from "./components/NavBar/NavBar";
 // Services
-import { getPlayers } from "./services/getServices";
+import { getPlayers, getPlayerByTeam } from "./services/getServices";
 import { getAirtable } from "./services/airtableServices";
 // React related libraries
 import { useState } from "react";
@@ -19,7 +19,7 @@ const App = () => {
   // States
   const [searchPlayer, setSearchPlayer] = useState();
   // const [selectedPlayerID, setSelectedPlayerID] = useState({});
-  const [returnResult, setReturnResult] = useState([]);
+  const [returnResult, setReturnResult] = useState([]); // This is the state that holds the display results on the search page
 
   // JS Functions
   const handleChange = (event) => {
@@ -35,6 +35,15 @@ const App = () => {
     // console.log(refdata);
     // return refdata;
     // console.log(refdata[0].player.name);
+  };
+
+  const handleClickTeam = async (event) => {
+    console.log(event.target.name);
+    let teamId = event.target.name;
+    let data = await getPlayerByTeam(teamId);
+    let refdata = data.response;
+    setReturnResult(refdata);
+    // console.log(refdata);
   };
 
   // JSX
@@ -58,6 +67,7 @@ const App = () => {
                     handleSubmit={handleSubmit}
                     // handleSelect={handleSelect}
                     returnResult={returnResult}
+                    handleClickTeam={handleClickTeam}
                   />
                 }
               />

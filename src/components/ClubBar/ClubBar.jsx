@@ -1,8 +1,7 @@
 import styles from "./ClubBar.module.css";
-import { getPlayerByTeam } from "../../services/getServices";
 // images from https://brandlogos.net/series/2024-25-premier-league-teams-logos-vector
 
-const ClubBar = () => {
+const ClubBar = ({ handleClickTeam }) => {
   const teamArr = [
     ["https://i.imgur.com/mSltbvt.png", 35], // Bournemouth
     ["https://i.imgur.com/taVnjf4.png", 42], // Arsenal
@@ -25,12 +24,14 @@ const ClubBar = () => {
     ["https://i.imgur.com/pJwuL3e.png", 48], // West Ham United
     ["https://i.imgur.com/UwwsQRD.png", 39], // Wolverhampton Wanderers
   ];
-  const handleClick = async (event) => {
-    console.log(event.target.name);
-    let teamId = event.target.name;
-    let data = await getPlayerByTeam(teamId);
-    console.log(data);
-  };
+
+  //   const handleClickTeam = async (event) => {
+  //     console.log(event.target.name);
+  //     let teamId = event.target.name;
+  //     let data = await getPlayerByTeam(teamId);
+  //     let refdata = data.response;
+  //     // console.log(refdata);
+  //   };
   return (
     <>
       <div className={styles.clubbar}>
@@ -40,7 +41,7 @@ const ClubBar = () => {
               className={styles.clubLogo}
               name={team[1]}
               src={team[0]}
-              onClick={handleClick}
+              onClick={handleClickTeam}
             />
           </div>
         ))}
