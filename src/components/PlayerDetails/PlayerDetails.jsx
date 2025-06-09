@@ -1,6 +1,6 @@
 // CSS Module for this component specifically
 import styles from "./PlayerDetails.module.css";
-import { PositionDetails } from "./PositionDetails";
+import { PositionDetails } from "../PositionDetails/PositionDetails";
 
 const PlayerDetails = ({ pdata }) => {
   return (
@@ -35,11 +35,11 @@ const PlayerDetails = ({ pdata }) => {
               </div>
               <div className={styles.boxHighlight}>
                 <div className={styles.boxCategory}>Wins</div>
-                <div className={styles.boxData}>70</div>
+                <div className={styles.boxData}>XYZ</div>
               </div>
               <div className={styles.boxHighlight}>
                 <div className={styles.boxCategory}>Losses</div>
-                <div className={styles.boxData}>20</div>
+                <div className={styles.boxData}>XYZ</div>
               </div>
             </div>
             <div className={styles.allData}>
