@@ -1,8 +1,9 @@
 import { PlayerCard } from "../PlayerCard/PlayerCard";
+import styles from "./SearchDisplay.module.css";
 
 const SearchDisplay = ({ returnResult, handleSelect }) => {
   return (
-    <div className="searchdisplay">
+    <div className={styles.searchdisplay}>
       {returnResult.length > 0 ? (
         returnResult.map((playerData) => (
           <PlayerCard

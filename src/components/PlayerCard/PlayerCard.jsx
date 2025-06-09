@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import styles from "./PlayerCard.module.css";
 
 export const PlayerCard = ({ player }) => {
   const navigate = useNavigate();
@@ -15,26 +16,28 @@ export const PlayerCard = ({ player }) => {
   };
 
   return (
-    <div className="player-card">
-      <div className="player-image-container">
+    <div className={styles.playercard}>
+      <div className={styles.playerimagecontainer}>
         {photo ? (
           <img
             src={photo}
             alt={`${firstname} ${lastname}`}
-            className="player-photo"
+            className={styles.playerphoto}
             name={id}
             onClick={handleSelect}
           />
         ) : (
-          <div className="no-photo-placeholder">No Photo Available</div>
+          <div className={styles.nophotoplaceholder}>No Photo Available</div>
         )}
       </div>
-      <div className="player-details">
-        <h3 className="player-name">{name || `${firstname} ${lastname}`}</h3>
-        <p className="player-nationality">{nationality}</p>
-        {teamName && <p className="player-club">{teamName}</p>}
-        {position && <p className="player-position">{position}</p>}
-        {age && <p className="player-age">{age}</p>}
+      <div className={styles.playerdetails}>
+        <h3 className={styles.playername}>
+          {name || `${firstname} ${lastname}`}
+        </h3>
+        <p className={styles.playernationality}>{nationality}</p>
+        {teamName && <p className={styles.playerclub}>{teamName}</p>}
+        {position && <p className={styles.playerposition}>{position}</p>}
+        {age && <p className={styles.playerage}>{age}</p>}
       </div>
     </div>
   );
