@@ -100,7 +100,7 @@ main {
   /* display: block; */
   /* display: inline; */
   position: absolute;
-  padding: 170px 0px 0px 360px;
+  margin: 170px 0px 0px 360px;
   height: 40px;
   width: 40px;
 }
@@ -108,7 +108,7 @@ main {
 .nonfav {
   /* display: block; */
   position: absolute;
-  padding: 170px 0px 0px 360px;
+  margin: 170px 0px 0px 360px;
   height: 40px;
   width: 40px;
 }
