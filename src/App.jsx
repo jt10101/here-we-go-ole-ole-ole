@@ -40,6 +40,16 @@ const App = () => {
     console.log(data);
   };
 
+  const renderFavs = async () => {
+    try {
+      const data = await getAirtable();
+      const datamod = data.records;
+      setFavPlayers(datamod);
+    } catch (Error) {
+      console.error("Error fetching data", Error);
+    }
+  };
+
   useEffect(() => {
     const getFavs = async () => {
       try {
@@ -52,16 +62,6 @@ const App = () => {
     };
     getFavs();
   }, []);
-
-  const renderFavs = async () => {
-    try {
-      const data = await getAirtable();
-      const datamod = data.records;
-      setFavPlayers(datamod);
-    } catch (Error) {
-      console.error("Error fetching data", Error);
-    }
-  };
 
   // JSX
   return (
