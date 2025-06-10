@@ -1,5 +1,6 @@
 import { Standings } from "../../components/StandingsTable/Standings";
 import { Fixtures } from "../../components/Fixtures/Fixtures";
+import { News } from "../../components/News/News";
 
 const Home = () => {
   return (
@@ -7,6 +8,7 @@ const Home = () => {
       <div className="home-container">
         <Standings />
         <Fixtures />
+        <News />
       </div>
     </>
   );
