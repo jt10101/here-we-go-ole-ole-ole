@@ -30,6 +30,7 @@ const App = () => {
     let refdata = [];
     refdata = data.response;
     setReturnResult(refdata);
+    console.log(refdata);
   };
 
   const handleClickTeam = async (event) => {

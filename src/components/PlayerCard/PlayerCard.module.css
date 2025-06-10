@@ -1,14 +1,14 @@
 /*CSS Design for Card*/
 .playercard {
-  background-color: #fff;
   border-radius: 12px;
+  width: 200px;
+  height: 300px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  width: 100%;
-  max-width: 120px;
+  /* overflow: hidden; */
   margin: 15px;
+  background-color: #fff;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
@@ -18,21 +18,17 @@
 }
 
 .playerimagecontainer {
-  width: 100%;
-  padding-top: 75%;
-  position: relative;
-  overflow: hidden;
-  background-color: #f0f0f0;
+  height: 55%;
+  width: auto;
+  padding: 8px;
 }
 
 .playerphoto {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-bottom: 3px solid #3498db;
 }
 
 .nophotoplaceholder {
@@ -51,6 +47,15 @@
   border-bottom: 3px solid #ccc;
 }
 
+.teamlogocontainer {
+  position: absolute;
+  margin: 10px 5px 0px 155px;
+}
+
+.teamLogo {
+  width: 35px;
+}
+
 .playerdetails {
   padding: 20px;
   text-align: center;
@@ -61,24 +66,21 @@
 }
 
 .playername {
-  font-size: 1.6em;
+  font-size: 1.2em;
   font-weight: 700;
   color: #333;
   margin-bottom: 10px;
   margin-top: 0;
 }
 
-.playernationality,
-.playerclub,
-.playerposition,
-.playerage {
+.playerposition {
   font-size: 1em;
   color: #555;
   margin-bottom: 5px;
   margin-top: 0;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .playercard {
     flex-direction: row;
     max-width: 600px;
@@ -100,4 +102,4 @@
   .player-name {
     font-size: 1.8em;
   }
-}
+} */

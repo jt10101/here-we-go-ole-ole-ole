@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import styles from "./PlayerCard2.module.css";
+import styles from "./PlayerCard.module.css";
 
 export const PlayerCard = ({ player }) => {
   const navigate = useNavigate();
@@ -7,6 +7,7 @@ export const PlayerCard = ({ player }) => {
     return null;
   }
   const { name, firstname, lastname, photo, id } = player.player;
+  const { logo } = player.statistics[0].team;
   const position = player.statistics[0]?.games?.position;
   const handleSelect = (event) => {
     let selectedPlayerID = event.target.name;
@@ -27,6 +28,9 @@ export const PlayerCard = ({ player }) => {
         ) : (
           <div className={styles.nophotoplaceholder}>No Photo Available</div>
         )}
+      </div>
+      <div className={styles.teamlogocontainer}>
+        <img src={logo} className={styles.teamLogo} alt={"test"} />
       </div>
       <div className={styles.playerdetails}>
         <h3 className={styles.playername}>
