@@ -1,4 +1,11 @@
 const PlayerHighlights = ({ pdata, styles }) => {
+  let role = pdata?.statistics[0].games.position;
+  let renderrole;
+  if (role === "Attacker") renderrole = "FW";
+  if (role === "Midfielder") renderrole = "MF";
+  if (role === "Defender") renderrole = "DF";
+  if (role === "Goalkeeper") renderrole = "GK";
+
   return (
     <>
       <div className={styles.playerHighlights}>
@@ -15,12 +22,14 @@ const PlayerHighlights = ({ pdata, styles }) => {
           </div>
         </div>
         <div className={styles.boxHighlight}>
-          <div className={styles.boxCategory}>Wins</div>
-          <div className={styles.boxData}>XYZ</div>
+          <div className={styles.boxCategory}>Appearances</div>
+          <div className={styles.boxData}>
+            {pdata?.statistics[0].games.appearences}
+          </div>
         </div>
         <div className={styles.boxHighlight}>
-          <div className={styles.boxCategory}>Losses</div>
-          <div className={styles.boxData}>XYZ</div>
+          <div className={styles.boxCategory}>Position</div>
+          <div className={styles.boxData}>{renderrole}</div>
         </div>
       </div>
     </>
