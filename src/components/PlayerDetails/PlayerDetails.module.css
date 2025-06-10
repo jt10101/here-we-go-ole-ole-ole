@@ -73,6 +73,7 @@
 .allData {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   gap: 20px;
   padding: 0px 10px;
 }
@@ -82,9 +83,11 @@
   border: 1px solid lightgray;
   border-radius: 15px;
   width: 50%;
+  height: auto;
 }
 
-.positionName {
+.positionName,
+.baseDetails {
   font-size: 20px;
   font-weight: bold;
   padding: 10px;

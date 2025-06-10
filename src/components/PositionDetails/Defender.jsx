@@ -90,6 +90,27 @@ const Defender = ({ pdata, styles }) => {
           <strong>{pdata?.statistics[0].dribbles.success}</strong>
         </div>
       </div>
+
+      <div className={styles.stats}>
+        <div>Tackles</div>
+        <div>
+          <strong>{pdata?.statistics[0].tackles.total}</strong>
+        </div>
+      </div>
+
+      <div className={styles.stats}>
+        <div>Interception</div>
+        <div>
+          <strong>{pdata?.statistics[0].tackles.interceptions}</strong>
+        </div>
+      </div>
+
+      <div className={styles.stats}>
+        <div>Fouls</div>
+        <div>
+          <strong>{pdata?.statistics[0].fouls.drawn}</strong>
+        </div>
+      </div>
     </>
   );
 };
