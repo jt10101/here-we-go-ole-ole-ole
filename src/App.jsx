@@ -45,7 +45,6 @@ const App = () => {
       try {
         const data = await getAirtable();
         const datamod = data.records;
-        // console.log(datamod);
         setFavPlayers(datamod);
       } catch (Error) {
         console.error("Error fetching data", Error);
@@ -53,6 +52,16 @@ const App = () => {
     };
     getFavs();
   }, []);
+
+  const renderFavs = async () => {
+    try {
+      const data = await getAirtable();
+      const datamod = data.records;
+      setFavPlayers(datamod);
+    } catch (Error) {
+      console.error("Error fetching data", Error);
+    }
+  };
 
   // JSX
   return (
@@ -78,7 +87,10 @@ const App = () => {
                   />
                 }
               />
-              <Route path="/players/:playerID" element={<DetailedPage />} />
+              <Route
+                path="/players/:playerID"
+                element={<DetailedPage renderFavs={renderFavs} />}
+              />
             </Routes>
           </section>
         </section>

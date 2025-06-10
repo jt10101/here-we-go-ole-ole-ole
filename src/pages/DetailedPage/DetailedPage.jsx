@@ -12,10 +12,10 @@ import { useState, useEffect } from "react";
 import { FavIcon } from "../../components/FavIcon/FavIcon";
 import { PlayerDetails } from "../../components/PlayerDetails/PlayerDetails";
 
-const DetailedPage = () => {
+const DetailedPage = ({ renderFavs }) => {
   const { playerID } = useParams();
   const [detailedData, setdetailedData] = useState(null);
-  const [isFav, setIsFav] = useState(false);
+  const [isFav, setIsFav] = useState(false); // This state is for determining if the player loaded is a Fav based on airtable
   const [recordID, setRecordID] = useState(null);
 
   useEffect(() => {
@@ -87,6 +87,7 @@ const DetailedPage = () => {
         console.error("Error pushing favorite:", error);
       }
     }
+    renderFavs();
   };
 
   if (pdata === null) {
