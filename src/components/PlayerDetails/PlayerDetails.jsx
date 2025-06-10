@@ -1,5 +1,6 @@
 // CSS Module for this component specifically
 import styles from "./PlayerDetails.module.css";
+import { PlayerHighlights } from "../PlayerHighlights/PlayerHighlights";
 import { PositionDetails } from "../PositionDetails/PositionDetails";
 import { BaseDetails } from "../BaseDetails/BaseDetails";
 
@@ -21,34 +22,15 @@ const PlayerDetails = ({ pdata }) => {
             <img className={styles.playerPhoto} src={pdata?.player?.photo} />
           </div>
           <div className={styles.contentContainers}>
-            <div className={styles.playerHighlights}>
-              <div className={styles.boxHighlight}>
-                <div className={styles.boxCategory}>Appearances</div>
-                <div className={styles.boxData}>
-                  {pdata?.statistics[0].games.appearences}
-                </div>
-              </div>
-              <div className={styles.boxHighlight}>
-                <div className={styles.boxCategory}>Goals</div>
-                <div className={styles.boxData}>
-                  {pdata?.statistics[0].goals.total}
-                </div>
-              </div>
-              <div className={styles.boxHighlight}>
-                <div className={styles.boxCategory}>Wins</div>
-                <div className={styles.boxData}>XYZ</div>
-              </div>
-              <div className={styles.boxHighlight}>
-                <div className={styles.boxCategory}>Losses</div>
-                <div className={styles.boxData}>XYZ</div>
-              </div>
-            </div>
+            <PlayerHighlights pdata={pdata} styles={styles} />
             <div className={styles.allData}>
               <div className={styles.positionData}>
                 <PositionDetails styles={styles} pdata={pdata} />
               </div>
               <div className={styles.baseData}>
-                <BaseDetails pdata={pdata} styles={styles} />
+                <div>
+                  <BaseDetails pdata={pdata} styles={styles} />
+                </div>
               </div>
             </div>
           </div>

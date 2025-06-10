@@ -93,7 +93,7 @@ const DetailedPage = () => {
     <>
       <FavIcon isFav={isFav} handleFav={handleFav} />
       <PlayerDetails pdata={pdata} />
-      <pre>{JSON.stringify(detailedData, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(detailedData, null, 2)}</pre> */}
     </>
   );
 };
