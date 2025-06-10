@@ -27,17 +27,22 @@ const ClubBar = ({ handleClickTeam }) => {
 
   return (
     <>
-      <div className={styles.clubbar}>
-        {teamArr.map((team) => (
-          <div>
-            <img
-              className={styles.clubLogo}
-              name={team[1]}
-              src={team[0]}
-              onClick={handleClickTeam}
-            />
+      <div>
+        <fieldset className={styles.clubbarContainer}>
+          <legend>Search by Club</legend>
+          <div className={styles.clubbar}>
+            {teamArr.map((team) => (
+              <div>
+                <img
+                  className={styles.clubLogo}
+                  name={team[1]}
+                  src={team[0]}
+                  onClick={handleClickTeam}
+                />
+              </div>
+            ))}
           </div>
-        ))}
+        </fieldset>
       </div>
     </>
   );

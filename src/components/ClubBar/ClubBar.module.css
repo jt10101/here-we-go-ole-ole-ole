@@ -1,8 +1,16 @@
+.clubbarContainer {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+
 .clubbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px 80px;
+  width: 100%;
 }
 
 .clubLogo {
