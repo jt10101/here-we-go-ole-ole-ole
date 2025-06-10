@@ -1,6 +1,7 @@
 // CSS Module for this component specifically
 import styles from "./PlayerDetails.module.css";
 import { PositionDetails } from "../PositionDetails/PositionDetails";
+import { BaseDetails } from "../BaseDetails/BaseDetails";
 
 const PlayerDetails = ({ pdata }) => {
   return (
@@ -47,13 +48,7 @@ const PlayerDetails = ({ pdata }) => {
                 <PositionDetails styles={styles} pdata={pdata} />
               </div>
               <div className={styles.baseData}>
-                <ul>
-                  <b>Base Details</b>
-                  <li>Nationality: {pdata?.player?.nationality}</li>
-                  <li>Age: {pdata?.player?.age}</li>
-                  <li>Height: {pdata?.player?.height}</li>
-                  <li>Weight: {pdata?.player?.weight}</li>
-                </ul>
+                <BaseDetails pdata={pdata} styles={styles} />
               </div>
             </div>
           </div>

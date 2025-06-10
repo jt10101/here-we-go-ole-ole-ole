@@ -3,6 +3,7 @@ main {
   flex-direction: column;
   min-height: 100vh;
   font-family: "Nunito Sans", sans-serif;
+  color: #38003c;
   /* background-image: url("https://i.imgur.com/YRR41h6.jpeg"); */
   /* background-size: auto; */
 }
@@ -12,8 +13,8 @@ main {
   flex-direction: row;
   align-items: center;
   height: 60px;
-  background-color: black;
-  color: white;
+  background-color: #38003c;
+  color: #ffffff;
 }
 
 .logo {
@@ -34,7 +35,7 @@ main {
 .navbar a {
   float: left;
   font-size: 18px;
-  color: white;
+  color: #ffffff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
