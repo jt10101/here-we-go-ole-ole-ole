@@ -95,14 +95,6 @@ main {
   flex-grow: 1;
 }
 
-.searchbar {
-  display: flex;
-  width: 100%;
-  height: 30px;
-  justify-content: center;
-  margin: 10px 0px 0px 0px;
-}
-
 /* Fav/Non Fav buttons */
 .fav {
   display: block;

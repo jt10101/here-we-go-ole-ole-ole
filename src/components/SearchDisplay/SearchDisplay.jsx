@@ -13,7 +13,7 @@ const SearchDisplay = ({ returnResult, handleSelect }) => {
           />
         ))
       ) : (
-        <p>No results found. Try searching for a player!</p>
+        <div>No results found. Try searching for a player!</div>
       )}
     </div>
   );
