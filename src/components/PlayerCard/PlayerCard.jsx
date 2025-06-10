@@ -1,14 +1,12 @@
 import { useNavigate } from "react-router";
-import styles from "./PlayerCard.module.css";
+import styles from "./PlayerCard2.module.css";
 
 export const PlayerCard = ({ player }) => {
   const navigate = useNavigate();
   if (!player) {
     return null;
   }
-  const { name, firstname, lastname, photo, nationality, age, id } =
-    player.player;
-  const teamName = player.statistics[0]?.team?.name;
+  const { name, firstname, lastname, photo, id } = player.player;
   const position = player.statistics[0]?.games?.position;
   const handleSelect = (event) => {
     let selectedPlayerID = event.target.name;
@@ -34,10 +32,7 @@ export const PlayerCard = ({ player }) => {
         <h3 className={styles.playername}>
           {name || `${firstname} ${lastname}`}
         </h3>
-        <p className={styles.playernationality}>{nationality}</p>
-        {teamName && <p className={styles.playerclub}>{teamName}</p>}
         {position && <p className={styles.playerposition}>{position}</p>}
-        {age && <p className={styles.playerage}>{age}</p>}
       </div>
     </div>
   );
