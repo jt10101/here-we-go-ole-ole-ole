@@ -14,7 +14,6 @@
 
 .playercard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px #e90052;
 }
 
 .playerimagecontainer {
@@ -103,3 +102,191 @@
     font-size: 1.8em;
   }
 } */
+
+/* Team Specific CSS Codes */
+/* BORDER COLOURS */
+
+.cardborder {
+  border-style: solid;
+  border-width: 2.5px;
+}
+
+/* Manchester United 33 */
+.team33 {
+  border-color: #da291c;
+  /* background-color: #da291c; */
+}
+.team33:hover {
+  box-shadow: 0 8px 25px #da291c;
+}
+
+/* Newcastle 34 */
+.team34 {
+  border-color: #241f20;
+  /* background-color: #da291c; */
+}
+.team34:hover {
+  box-shadow: 0 8px 25px #241f20;
+}
+
+/* Bournemouth 35 */
+.team34 {
+  border-color: #b50e12;
+  /* background-color: #da291c; */
+}
+.team34:hover {
+  box-shadow: 0 8px 25px #b50e12;
+}
+
+/* Fulham 36 */
+.team36 {
+  border-color: #000000;
+  /* background-color: #da291c; */
+}
+.team36:hover {
+  box-shadow: 0 8px 25px #000000;
+}
+
+/* Wolves 39 */
+.team39 {
+  border-color: #fdb913;
+  /* background-color: #da291c; */
+}
+.team39:hover {
+  box-shadow: 0 8px 25px #fdb913;
+}
+
+/* Liverpool 40 */
+.team40 {
+  border-color: #c8102e;
+  /* background-color: #da291c; */
+}
+.team40:hover {
+  box-shadow: 0 8px 25px #c8102e;
+}
+
+/* Southhampton 41 */
+.team41 {
+  border-color: #d71920;
+  /* background-color: #da291c; */
+}
+.team41:hover {
+  box-shadow: 0 8px 25px #d71920;
+}
+
+/* Arsenal 42 */
+.team42 {
+  border-color: #9c824a;
+  /* background-color: #da291c; */
+}
+.team42:hover {
+  box-shadow: 0 8px 25px #9c824a;
+}
+
+/* Everton 45 */
+.team45 {
+  border-color: #003399;
+  /* background-color: #da291c; */
+}
+.team45:hover {
+  box-shadow: 0 8px 25px #003399;
+}
+
+/* Leicester 46 */
+.team46 {
+  border-color: #003090;
+  /* background-color: #da291c; */
+}
+.team46:hover {
+  box-shadow: 0 8px 25px #003090;
+}
+
+/* Tottenham 47 */
+.team47 {
+  border-color: #132257;
+  /* background-color: #da291c; */
+}
+.team47:hover {
+  box-shadow: 0 8px 25px #132257;
+}
+
+/* Westham 48 */
+.team48 {
+  border-color: #7a263a;
+  /* background-color: #da291c; */
+}
+.team48:hover {
+  box-shadow: 0 8px 25px #7a263a;
+}
+
+/* Chelsea 49 */
+.team49 {
+  border-color: #034694;
+  /* background-color: #da291c; */
+}
+.team49:hover {
+  box-shadow: 0 8px 25px #034694;
+}
+
+/* Manchester City 50 */
+.team50 {
+  border-color: #6cabdd;
+  /* background-color: #da291c; */
+}
+.team50:hover {
+  box-shadow: 0 8px 25px #6cabdd;
+}
+
+/* Brighton City 51 */
+.team51 {
+  border-color: #0057b8;
+  /* background-color: #da291c; */
+}
+.team51:hover {
+  box-shadow: 0 8px 25px #0057b8;
+}
+
+/* Crystal Palace 52 */
+.team52 {
+  border-color: #1b458f;
+  /* background-color: #da291c; */
+}
+.team52:hover {
+  box-shadow: 0 8px 25px #1b458f;
+}
+
+/* Brentford 55 */
+.team55 {
+  border-color: #3e2415;
+  /* background-color: #da291c; */
+}
+.team55:hover {
+  box-shadow: 0 8px 25px #3e2415;
+}
+
+/* Ipswich 57 */
+.team57 {
+  border-color: #ea6a28;
+  /* background-color: #da291c; */
+}
+.team57:hover {
+  box-shadow: 0 8px 25px #ea6a28;
+}
+
+/* Nottingham 65 */
+.team65 {
+  border-color: #dd0000;
+  /* background-color: #da291c; */
+}
+.team65:hover {
+  box-shadow: 0 8px 25px #dd0000;
+}
+
+/* Aston Villa 66 */
+.team65 {
+  border-color: #95bfe5;
+  /* background-color: #da291c; */
+}
+.team65:hover {
+  box-shadow: 0 8px 25px #95bfe5;
+}

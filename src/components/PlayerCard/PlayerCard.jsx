@@ -9,13 +9,19 @@ export const PlayerCard = ({ player }) => {
   const { name, firstname, lastname, photo, id } = player.player;
   const { logo } = player.statistics[0].team;
   const position = player.statistics[0]?.games?.position;
+  const teamid = player.statistics[0].team.id;
+  console.log(teamid);
   const handleSelect = (event) => {
     let selectedPlayerID = event.target.name;
     navigate(`/players/${selectedPlayerID}`);
   };
 
   return (
-    <div className={styles.playercard}>
+    <div
+      className={`${styles.playercard} ${styles.cardborder} ${
+        styles[`team${teamid}`]
+      }`}
+    >
       <div className={styles.playerimagecontainer}>
         {photo ? (
           <img
