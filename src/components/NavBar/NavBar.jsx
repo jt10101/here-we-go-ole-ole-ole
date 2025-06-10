@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { FavList } from "../FavList/FavList";
-const NavBar = () => {
+const NavBar = ({ favPlayers }) => {
   return (
     <>
       <div className="navbar">
@@ -11,7 +11,7 @@ const NavBar = () => {
             Favourites<i className="fa fa-caret-down"></i>
           </button>
           <div className="dropdown-content">
-            <FavList />
+            <FavList favPlayers={favPlayers} />
           </div>
         </div>
       </div>

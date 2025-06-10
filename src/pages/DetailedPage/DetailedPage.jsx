@@ -47,6 +47,7 @@ const DetailedPage = () => {
     };
     getIndividualData();
   }, [playerID]);
+
   const pdata = detailedData;
   const handleFav = async () => {
     // Ensure pdata exists before attempting to push/delete
@@ -86,9 +87,11 @@ const DetailedPage = () => {
       }
     }
   };
+
   if (pdata === null) {
     return <div>Loading player details...</div>;
   }
+
   return (
     <>
       <FavIcon isFav={isFav} handleFav={handleFav} />

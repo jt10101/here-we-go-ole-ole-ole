@@ -10,7 +10,7 @@ import { NavBar } from "./components/NavBar/NavBar";
 import { getPlayers, getPlayerByTeam } from "./services/getServices";
 import { getAirtable } from "./services/airtableServices";
 // React related libraries
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router";
 // CSS file
 import "./App.css";
@@ -18,8 +18,8 @@ import "./App.css";
 const App = () => {
   // States
   const [searchPlayer, setSearchPlayer] = useState();
-  // const [selectedPlayerID, setSelectedPlayerID] = useState({});
   const [returnResult, setReturnResult] = useState([]); // This is the state that holds the display results on the search page
+  const [favPlayers, setFavPlayers] = useState([]);
 
   // JS Functions
   const handleChange = (event) => {
@@ -32,9 +32,6 @@ const App = () => {
     let refdata = [];
     refdata = data.response;
     setReturnResult(refdata);
-    // console.log(refdata);
-    // return refdata;
-    // console.log(refdata[0].player.name);
   };
 
   const handleClickTeam = async (event) => {
@@ -44,13 +41,27 @@ const App = () => {
     console.log(data);
   };
 
+  useEffect(() => {
+    const getFavs = async () => {
+      try {
+        const data = await getAirtable();
+        const datamod = data.records;
+        // console.log(datamod);
+        setFavPlayers(datamod);
+      } catch (Error) {
+        console.error("Error fetching data", Error);
+      }
+    };
+    getFavs();
+  }, []);
+
   // JSX
   return (
     <>
       <main>
         <section className="header">
           <img className="logo" src="https://i.imgur.com/2UEwZLK.png" />
-          <NavBar getAirtable={getAirtable} />
+          <NavBar getAirtable={getAirtable} favPlayers={favPlayers} />
         </section>
         {/* Body comprises of all elements below the header */}
         <section className="body">
