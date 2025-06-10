@@ -97,13 +97,18 @@ main {
 
 /* Fav/Non Fav buttons */
 .fav {
-  display: block;
+  /* display: block; */
+  /* display: inline; */
+  position: absolute;
+  padding: 170px 0px 0px 360px;
   height: 40px;
   width: 40px;
 }
 
 .nonfav {
-  display: block;
+  /* display: block; */
+  position: absolute;
+  padding: 170px 0px 0px 360px;
   height: 40px;
   width: 40px;
 }
