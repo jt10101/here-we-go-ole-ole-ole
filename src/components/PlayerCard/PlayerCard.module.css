@@ -16,6 +16,11 @@
   transform: translateY(-5px);
 }
 
+.cardborder {
+  border-style: solid;
+  border-width: 2.5px;
+}
+
 .playerimagecontainer {
   height: 55%;
   width: auto;
@@ -105,12 +110,6 @@
 
 /* Team Specific CSS Codes */
 /* BORDER COLOURS */
-
-.cardborder {
-  border-style: solid;
-  border-width: 2.5px;
-}
-
 /* Manchester United 33 */
 .team33 {
   border-color: #da291c;

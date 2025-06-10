@@ -10,10 +10,11 @@ export const PlayerCard = ({ player }) => {
   const { logo } = player.statistics[0].team;
   const position = player.statistics[0]?.games?.position;
   const teamid = player.statistics[0].team.id;
-  console.log(teamid);
   const handleSelect = (event) => {
     let selectedPlayerID = event.target.name;
     navigate(`/players/${selectedPlayerID}`);
+    // console.log(event.currentTarget.name);
+    // console.log(event.currentTarget);
   };
 
   return (

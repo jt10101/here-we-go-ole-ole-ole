@@ -59,7 +59,7 @@ const App = () => {
     <>
       <main>
         <section className="header">
-          <img className="logo" src="https://i.imgur.com/2UEwZLK.png" />
+          <img className="logo" src="https://i.imgur.com/GWmeX74.png" />
           <NavBar getAirtable={getAirtable} favPlayers={favPlayers} />
         </section>
         {/* Body comprises of all elements below the header */}
@@ -73,7 +73,6 @@ const App = () => {
                   <SearchPage
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
-                    // handleSelect={handleSelect}
                     returnResult={returnResult}
                     handleClickTeam={handleClickTeam}
                   />

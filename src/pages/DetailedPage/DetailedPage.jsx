@@ -49,6 +49,7 @@ const DetailedPage = () => {
   }, [playerID]);
 
   const pdata = detailedData;
+
   const handleFav = async () => {
     // Ensure pdata exists before attempting to push/delete
     if (!pdata || !pdata.player || !pdata.player.name || !pdata.player.id) {
