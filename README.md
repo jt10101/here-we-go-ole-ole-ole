@@ -30,6 +30,11 @@ Nice-to-have functionalities
 - React JS
 - Base CSS
 
+## API & Airtable
+
+- https://www.api-football.com/
+- https://airtable.com/app6gjtZQ7OinU39n?
+
 ## React Architecture
 
 ![alt text](readme-images/react-architecture.png)
